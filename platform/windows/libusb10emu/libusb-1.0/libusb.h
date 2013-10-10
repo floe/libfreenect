@@ -24,8 +24,7 @@
 * either License.
 */
 
-#ifndef LIBUSB_1_0_INTERFACE_EMULATOR_FOR_LIBUSB_0_1_H
-#define LIBUSB_1_0_INTERFACE_EMULATOR_FOR_LIBUSB_0_1_H
+#pragma once
 
 // This interface emulator requires the libusb-win32 v1.2.2.1 (snapshot)
 // or later. Prior win32 versions of the library were not conformal to
@@ -78,6 +77,7 @@ int libusb_get_string_descriptor(libusb_device_handle *dev_handle, uint8_t desc_
 int libusb_get_string_descriptor_ascii(libusb_device_handle *dev_handle, uint8_t desc_index, unsigned char *data, int length);
 
 int libusb_set_configuration(libusb_device_handle *dev, int configuration);
+int libusb_set_interface_alt_setting(libusb_device_handle *dev,int interface_number,int alternate_setting);	
 int libusb_claim_interface(libusb_device_handle* dev, int interface_number);
 int libusb_release_interface(libusb_device_handle* dev, int interface_number);
 
@@ -198,5 +198,3 @@ enum libusb_error
 #ifdef __cplusplus
   }
 #endif
-
-#endif//LIBUSB_1_0_INTERFACE_EMULATOR_FOR_LIBUSB_0_1_H
